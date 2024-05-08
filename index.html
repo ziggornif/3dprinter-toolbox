@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+  <meta charset='utf-8'>
+  <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+  <title>3D Printer Toolbox</title>
+  <meta name='viewport' content='width=device-width, initial-scale=1'>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@picocss/pico@2/css/pico.min.css"/>
+  <script type="module" src='/src/main.ts'></script>
+</head>
+<body>
+  <header class="container">
+    <hgroup>
+      <h1>3D Printer Toolbox</h1>
+    </hgroup>
+  </header>
+  <main class="container">
+    <section id="extruder-calculator">
+      <h2>Extruder steps/mm calculator</h2>
+      <section>
+        <h3>Tutorial</h3>
+        <p>Based on tutorial : <a href="https://all3dp.com/2/extruder-calibration-calibrate-e-steps/">Extruder Calibration: How to Calibrate E-Steps</a></p>
+        <div>
+          <img src="/mark-filament.jpeg" alt="image that show how to mark the filament before the extruder">
+          <p>With a caliper, mesure 120 mm on the filament before the extruder and put a mark on it.</p>
+          <p>Go to the printer interface and extrude 100 mm.</p>
+          <img src="/extruder-to-mark.jpeg" alt="image that show how to mesure the rest of filament after the 100mm extrusion">
+          <p>At the end of the extrusion, mesure the distance between the mark and the extruder.</p>
+          <img src="https://placehold.co/600x300/EEE/31343C" alt="Printer steps/mm configuration screen">
+          <p>Go to your printer extruder steps/mm configuration and note the current value.</p>
+        </div>
+      </section>
+      <section>
+        <h3>Calculator</h3>
+        <form id="extruder-calc">
+          <fieldset class="grid">
+            <input
+                id="extruded"
+                type="text"
+                name="extruded-length"
+                placeholder="Extruded length"
+            />
+            <input
+              id="current-steps"
+              type="text"
+              name="current-steps"
+              placeholder="Current steps/mm extruder configuration"
+            />
+            <input
+              type="submit"
+              value="Calculate"
+            />
+          </fieldset>
+        </form>
+      </section>
+      <div id="extruder-result">
+      </div>
+    </section>
+  </main>
+</body>
+</html>
