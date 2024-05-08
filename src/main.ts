@@ -27,7 +27,7 @@ window.onload = async function () {
     const extrudedResult = document.getElementById("extruder-result");
     extrudedResult!.innerHTML = "";
     const pResult = document.createElement('p');
-    pResult.innerHTML = `Your new configuration must be <strong>${newValue} steps/mm<strong>.`;
+    pResult.innerHTML = `Change your E steps/mm value to <strong>${newValue} steps/mm<strong>.`;
     extrudedResult?.append(pResult);
     extrudedResult?.scrollIntoView();
     extrudedInput!.value = "";
